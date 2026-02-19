@@ -7,9 +7,10 @@
 4. Make it executable and run it
 - chmod 744 hello.sh
 
-![Image](Images/echo.png)
-
 [Script](Scripts/hello.sh)
+
+
+![Image](Images/echo.png)
 
 
 **Document:** What happens if you remove the shebang line?
@@ -29,6 +30,7 @@
 
 [Script](Scripts/variables.sh)
 
+
 ![Image](Images/Variables%20.png)
 
 
@@ -40,6 +42,46 @@
    - Asks for their favourite tool
    - Prints: `Hello <name>, your favourite tool is <tool>`
 
+[Script](Scripts/greet.sh)
+
+
 ![Image](Images/user-input.png)
 
-[Script](Scripts/greet.sh
+
+---
+
+### Task 4: If-Else Conditions
+1. Create `check_number.sh` that:
+   - Takes a number using `read`
+   - Prints whether it is **positive**, **negative**, or **zero**
+
+   [Script](Scripts/check_number.sh)
+
+
+   ![Image](Images/check_number.png)
+
+
+2. Create `file_check.sh` that:
+   - Asks for a filename
+   - Checks if the file **exists** using `-f`
+   - Prints appropriate message
+
+   [Script](Scripts/check_file.sh)
+
+
+   ![Image](Images/filename_check.png)
+
+
+   ---
+
+   ### Task 5: Combine It All
+Create `server_check.sh` that:
+1. Stores a service name in a variable (e.g., `nginx`, `sshd`)
+2. Asks the user: "Do you want to check the status? (y/n)"
+3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
+4. If `n` — prints "Skipped."
+
+[Script](Scripts/server_check.sh)
+
+
+![Image](Images/server_check.png)
