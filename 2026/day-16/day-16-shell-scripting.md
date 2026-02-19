@@ -7,7 +7,7 @@
 4. Make it executable and run it
 - chmod 744 hello.sh
 
-![Image](images/echo.png)
+![Image](Images/echo.png)
 
 ![Script](Scripts/hello.sh)
 
