@@ -9,7 +9,7 @@
 
 ![Image](Images/echo.png)
 
-![Script](Scripts/hello.sh)
+[Script](Scripts/hello.sh)
 
 
 **Document:** What happens if you remove the shebang line?
@@ -27,9 +27,19 @@
 - double quotes " " its called variable, what u define use $ sign when u want to use a variable 
 - single qutes ' ' it will print as it is written words 
 
-![Script](Scripts/variables.sh)
+[Script](Scripts/variables.sh)
 
-![Image](Images/Variables.png)
+![Image](Images/Variables%20.png)
 
 
 ---
+
+### Task 3: User Input with read
+1. Create `greet.sh` that:
+   - Asks the user for their name using `read`
+   - Asks for their favourite tool
+   - Prints: `Hello <name>, your favourite tool is <tool>`
+
+![Image](Images/user-input.png)
+
+[Script](Scripts/greet.sh
