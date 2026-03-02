@@ -1,0 +1,22 @@
+name: Santosh
+role: DevOps Engineer
+experience_years: 14
+learnings: true 
+
+tools:
+ - Docker
+ - Kubernetes
+ - Jenkins
+ - AWS
+ - Monitoring and observability
+  
+---
+  # two ways to write lists in yml
+  ## Block style 
+   tools:
+    - Docker
+    - Kubernetes
+---
+
+## Inline
+tools: [docker, Kubernetes]

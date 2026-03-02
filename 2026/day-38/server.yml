@@ -1,0 +1,22 @@
+server:
+  name: web-server-01
+  ip: 10.10.10.1
+  port: 443
+
+databases:  
+  host: db-server-01
+  name: production_db
+  credentials:
+    user: root
+    password: 123
+
+
+startup_script_literal: |
+  #!/bin/bash
+  echo "starting application"
+  systemctl start nginx
+
+startup_scrpt_folder: >
+  #!/bin/bash
+  echo "Starting application"
+  systemctl start nginx
