@@ -1,0 +1,21 @@
+ name: Manula workflow
+ on:
+   workflow_dispatch:
+     inputs:
+       environments:
+        description: "select environments"
+        required: true 
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
+
+ jobs:
+   manual-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print environments
+        run: echo "Deploying to ${{github.event.input.environments}}"        
+
