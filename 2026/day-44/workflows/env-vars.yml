@@ -1,0 +1,27 @@
+name: environments variables 
+
+on:
+  workflow_dispatch:
+
+env:
+  AAP_NAME: myapp
+
+
+jobs:
+  env-vars:
+    env:
+      ENVIRONMENT: staing   
+    runs-on: ubuntu-latest
+    steps:
+      - name: print all env
+        env:
+          VERSION: 1.0.0
+        run: |
+          echo "workflow level env: $APP_NAME"
+          echo "job level env: $ENVIRONMENT"
+          echo "steps level env: $VERSION"
+          echo commit SHA: "${{ github.sha }}"
+          echo Actor: "${{ github.actor }}"
+
+
+
