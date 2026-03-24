@@ -1,0 +1,38 @@
+name: Docker Build & Push (Task 4)
+
+on:
+  push:
+    branches:
+      - main
+      - featuretest
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set Short SHA
+        run: echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Login to Docker Hub
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ vars.DOCKERHUB_USER }}" --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t ${{ vars.DOCKERHUB_USER }}/test-app:latest .
+
+      - name: Tag Image with SHA
+        run: |
+          docker tag ${{ vars.DOCKERHUB_USER }}/test-app:latest ${{ vars.DOCKERHUB_USER }}/test-app:sha-${{ env.SHA_SHORT }}
+
+      - name: Push Docker Images
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker push ${{ vars.DOCKERHUB_USER }}/test-app:latest
+          docker push ${{ vars.DOCKERHUB_USER }}/test-app:sha-${{ env.SHA_SHORT }}
